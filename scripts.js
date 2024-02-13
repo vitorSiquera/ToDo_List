@@ -20,19 +20,20 @@ function mostrarTarefas() {
 
   // ['comprar café', 'estudar programação']
 
-  minhaListaDeItens.forEach((item, posicao) => {
-    novaLi =
-      novaLi +
-      `
-
-        <li class="task ${item.concluida && 'done'}">
-            <img src="./img/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})">
+ minhaListaDeItens.forEach((item, posicao) => {
+  novaLi =
+    novaLi +
+    `
+    <li class="task ${item.concluida && 'done'}">
+        <div style="display: flex; align-items: center;">
             <p>${item.tarefa}</p>
-            <img src="./img/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
-        </li>
-        
-        `
-  })
+            <img src="./img/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})" style="width: 20px; height: 20px;">
+            <img src="./img/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})" style="width: 20px; height: 20px;">
+        </div>
+    </li>
+    `
+})
+
 
   listaCompleta.innerHTML = novaLi
 
